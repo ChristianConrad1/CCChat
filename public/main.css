@@ -1,0 +1,48 @@
+html, body, #chat, #leftside, #rightside {
+  height: 100%
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 10%;
+}
+
+#rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 66.666%;
+  flex-flow: column;
+  padding: 10px;
+}
+
+#rightside #top {
+  height: 90%;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+#rightside #bottom {
+  height: 10%;
+}
+
+#chat {
+  display: flex;
+}
+
+#leftside {
+  width: 33.333%;
+  padding: 10px;
+}
+
+#rightside form {
+  display: flex;
+}
+
+#m {
+  margin-right: 5px;
+}

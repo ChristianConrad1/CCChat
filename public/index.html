@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Chat </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="/main.js" charset="utf-8"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="/delivery.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <header class="blue">
+    <p>Mega toller Chat</p>
+  </header>
+
+  <div id="login">
+    <div class="container">
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <p id="failure"></p>
+          <form id="loginform">
+            <label>Your Username</label>
+            <input type="text" id="username" autocomplete="off">
+            <button class="btn-large">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="chat" style="display: none">
+    <div id="leftside">
+      <ul id="users"></ul>
+    </div>
+
+    <div id="rightside">
+      <div id="top">
+        <ul class="tabs">
+          <li class="tab col s3" id="irc"><a href="#messages">Allgemein</a></li>
+        </ul>
+        <ul id="messages"></ul>
+      </div>
+      <div id="bottom">
+        <form id="chatform">
+          <input id="m" autocomplete="off" />
+          <button id="send" class="btn-large">Send</button>
+        </form>
+        <form id="fileupload">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>File</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" style="display:none">
+            </div>
+          </div>
+          <button id="sendfile" class="btn-large">Send File</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
