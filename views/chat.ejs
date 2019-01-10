@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Chat </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+  <script src="/chat.js" charset="utf-8"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <header>
+  </header>
+  <div id="chatarea">
+    <div id="chat">
+      <div id="leftside">
+        <div id="avatar-wrapper">
+
+          <img class="circle" id="profilepicture" src="/avatar_placeholder.png" alt="Missing Template" height="170" width="170">
+          <div class="edit">
+            <a class="modal-trigger" href="#upload"><i class="material-icons">edit</i></a>
+          </div>
+        </div>
+        <% if (user.length > 0) { %>
+          <div class="user">
+            <%= user %>
+          </div>
+          <% } %>
+            <a href="/logout" id="logout"><i class="material-icons">exit_to_app</i></a>
+            <span id="instance"><i class="material-icons">backup</i></span>
+            <div id="userwrapper">
+              <ul id="users"></ul>
+            </div>
+      </div>
+
+      <div id="rightside">
+        <div id="top">
+          <ul class="tabs">
+            <li class="tab col s3" id="irc"><a href="#messages" class="active"><span style='visibility: hidden' id="ircnotification" class="new badge red" data-badge-caption=""></span>General Chat</a></li>
+          </ul>
+          <ul id="messages" class="messagewindow"></ul>
+        </div>
+        <div id="bottom">
+          <form id="chatform">
+            <div class="chatinput">
+              <input id="m" autocomplete="off" />
+            </div>
+            <button type="submit" id="send" class="btn-large">
+              <i class="large material-icons">send</i>
+            </button>
+          </form>
+          <form id="fileupload">
+            <div class="file-field input-field">
+              <div class="btn" id="attachment-btn">
+                <span><i class="large material-icons">attach_file</i></span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="upload" class="modal">
+    <div class="modal-content">
+      <h4>Update your Profile Picture</h4>
+      <form id="uploadform">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input id="upload-input" type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <div id="pictureupload" class="modal-action modal-close waves-effect waves-green btn-flat">Hochladen</div>
+    </div>
+
+  </div>
+  <p id="instance-id" style="display: none;">Instance ID: <span id="instance-id-value"></span></p>
+</body>
+
+</html>

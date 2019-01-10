@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Chat </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script src="/main.js" charset="utf-8"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <header>
+  </header>
+  <div id="login">
+    <div class="container">
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <!-- show any messages that come back with authentication -->
+          <% if (message.length > 0) { %>
+            <div class="alert alert-danger">
+              <%= message %>
+            </div>
+            <% } %>
+
+              <form action="/signup" id="loginform" method="post">
+                <% if(typeof csrfToken !== 'undefined'){ %>
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                  <% } %>
+                    <label>Username:</label>
+                    <input type="text" id="username" autocomplete="off" name="username">
+                    <label>Password:</label>
+                    <input type="password" id="password" autocomplete="off" name="password">
+                    <button class="btn-large" type="submit">Sign up</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Battleships</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/main.css">
+  <script src="/battleships.js" charset="utf-8"></script>
+  <style>
+    td {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Battleships</h2>
+    </div>
+    <div class="row">
+      <% if (user.length > 0) { %>
+        <div class="user">
+          <%= user %>
+        </div>
+        <% } %>
+    <div class="row">
+      <p class="center-align" id="status"></p>
+    </div>
+    <div class="row">
+      <div class="col s6">
+      <h2 class="center-align" id="player"></h2>
+      <div id="myboard"></div>
+      </div>
+      <div class="col s6">
+    <h2 class="center-align" id="enemyplayer"></h2>
+    <div id="enemyboard"></div>
+      </div>
+    </div>
+    <div id="buttons" class="row" style="display: none;">
+        <a id="direction" class="waves-effect waves-light btn red">Horizontal</a>
+        <a id="5" class="waves-effect waves-light btn blue shipselect"><span id="span5">1</span>x Carrier</a>
+        <a id="4" class="waves-effect waves-light btn blue shipselect"><span id="span4">2</span>x Cruiser</a>
+        <a id="3" class="waves-effect waves-light btn blue shipselect"><span id="span3">3</span>x Destroyer</a>
+        <a id="2" class="waves-effect waves-light btn blue shipselect"><span id="span2">4</span>x Submarine</a>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js" charset="utf-8"></script>
+</body>
+</html>

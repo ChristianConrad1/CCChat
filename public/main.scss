@@ -1,0 +1,284 @@
+$chatBorderRadius: 5px;
+
+* {
+  box-sizing: border-box;
+}
+
+#chat,
+#leftside,
+#rightside,
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #d5dbd8;
+}
+
+header {
+  height: 20%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  background: #26a69a;
+}
+
+#chatarea {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  z-index: 10;
+}
+
+#chat {
+  max-width: 1500px;
+  display: flex;
+  background: #eeeeee;
+  margin: 0 auto;
+  border-radius: $chatBorderRadius;
+}
+
+#rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  flex-flow: column;
+}
+
+#rightside {
+  position: relative;
+
+  #top {
+    height: 85%;
+    overflow-y: scroll;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    background-image: url("bg.jpg");
+  }
+
+  #bottom {
+    position: relative;
+    height: 15%;
+    justify-content: space-between;
+  }
+
+  #chatform {
+    width: 100%;
+    display: flex;
+
+    .chatinput {
+      width: calc(100% - 90px);
+    }
+  }
+
+  #send {
+    position: absolute;
+    right: 5px;
+    height: 45px;
+    line-height: 45px;
+  }
+
+  #attachment-btn {
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  #fileupload {
+    float: right;
+
+    .file-field.input-field {
+      height: 2rem;
+      margin-top: 0;
+    }
+
+    .file-field .file-path-wrapper {
+      padding-left: 0;
+    }
+  }
+
+  .tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-right-radius: $chatBorderRadius;
+    background: #eee;
+
+    .tab a {
+      color: black;
+      padding-top: 3px;
+    }
+
+    .indicator {
+      background-color: #26a69a;
+    }
+  }
+}
+
+.battleships {
+  position: absolute;
+  top: 55px;
+  left: 5px;
+}
+
+.messagewindow {
+  li {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+    box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+
+    .messagetop {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+
+    .messagecontent {
+      margin-top: 5px;
+    }
+  }
+}
+
+#leftside {
+  width: 30%;
+  padding: 30px;
+  background: #eee;
+  border-top-left-radius: $chatBorderRadius;
+  border-bottom-left-radius: $chatBorderRadius;
+  color: #626262;
+}
+#userwrapper{
+  height: 62%;
+  overflow-y: scroll;
+}
+
+#avatar-wrapper {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+  img {
+    min-height: 170px;
+  }
+}
+
+.edit {
+  padding-top: 0;
+  padding-right: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+}
+
+#avatar-wrapper:hover .edit {
+  display: block;
+}
+
+.user {
+  text-align: center;
+  padding: 20px;
+  font-size: 24pt;
+}
+
+#users {
+  li {
+    span {
+      height: 100%;
+      align-self: center;
+    }
+    cursor: pointer;
+    margin: 15px 0;
+    padding: 10px;
+    font-size: 20px;
+    background: #fff;
+    -webkit-box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+    box-shadow: 5px 7px 29px -6px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+    max-height: 70px;
+  }
+
+  img:hover {
+    border: 1px solid #26a69a;
+  }
+}
+
+#rightside {
+  li.message {
+    width: 97%;
+  }
+
+  li.message.recipant {
+    float: left;
+    width: 70%;
+  }
+
+  li.message.sender {
+    float: right;
+    width: 70%;
+    background-color: #dcf8c6;
+  }
+}
+
+#m {
+  margin-right: 5px;
+  font-size: 12pt;
+}
+
+.happy {
+  color: green;
+}
+
+.unhappy {
+  color: red;
+}
+
+#login {
+  margin-top: 200px;
+}
+
+#loginform {
+  label {
+    font-size: 22pt;
+  }
+
+  input {
+    font-size: 18pt;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #leftside {
+    width: 40%;
+  }
+
+  #rightside {
+    width: 60%;
+  }
+
+  #chatarea {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  #leftside,
+  #rightside,
+  #rightside .tabs {
+    border-radius: 0;
+  }
+}

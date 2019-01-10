@@ -1,1 +1,1 @@
-CCChat
+cloudchatadvanced

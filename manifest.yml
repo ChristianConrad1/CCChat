@@ -1,0 +1,10 @@
+    applications:
+    - path: .
+    name: cloudchatadvanced
+    host: cloudchatadvanced
+    framework: node
+    memory: 256M
+    instances: 4
+    services:
+    - Cloudant NoSQL DB-bg
+    - redis01
